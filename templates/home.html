@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Employability Platform</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 40px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            width: 250px;
+            border-radius: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255,255,255,0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚀 AI Employability Platform</h1>
+<p>Analyze • Improve • Get Hired</p>
+
+<div class="container">
+
+    <a href="/manual">
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h2>Manual Analyzer</h2>
+            <p>Enter your skills manually</p>
+        </div>
+    </a>
+
+    <a href="/resume">
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h2>Resume Analyzer</h2>
+            <p>Upload your resume</p>
+        </div>
+    </a>
+
+    <a href="/job_match_page">
+        <div class="card">
+            <div class="icon">💼</div>
+            <h2>Job Matcher</h2>
+            <p>Match resume with job</p>
+        </div>
+    </a>
+
+</div>
+
+</body>
+</html>

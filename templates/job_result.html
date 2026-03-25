@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Job Match Result</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="main-container">
+
+<h1>Job Match Analysis 🚀</h1>
+
+<!-- MATCH % -->
+<section class="result-card">
+    <h2>Match Percentage</h2>
+    <h3>{{ match_percent }}%</h3>
+</section>
+
+<!-- MATCHED SKILLS -->
+<section class="result-card">
+    <h2>Matched Skills</h2>
+    {% if matched %}
+        <p>{{ matched | join(', ') }}</p>
+    {% else %}
+        <p>No matching skills found.</p>
+    {% endif %}
+</section>
+
+<!-- MISSING SKILLS -->
+<section class="result-card">
+    <h2>Missing Skills</h2>
+    {% if missing %}
+        <ul>
+            {% for skill in missing %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You meet all job requirements 🎉</p>
+    {% endif %}
+</section>
+
+<!-- COURSES -->
+<section class="result-card">
+    <h2>Recommended Courses</h2>
+    {% if courses %}
+        <ul>
+        {% for skill, link in courses.items() %}
+            <li><a href="{{ link }}" target="_blank">Learn {{ skill }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No courses needed.</p>
+    {% endif %}
+</section>
+
+<!-- RECOMMENDED JOBS -->
+<section class="result-card">
+    <h2>Recommended Jobs Based on Your Skills</h2>
+
+    <div class="job-grid">
+        {% if jobs %}
+            {% for job in jobs %}
+            <div class="job-card">
+                <h3>{{ job.title }} ({{ job.domain }})</h3>
+
+                <p><strong>Match:</strong> {{ job.match_percent }}%</p>
+
+                <p><strong>Matched Skills:</strong>
+                    {{ job.matched_skills | join(', ') }}
+                </p>
+
+                <p><strong>Skills to Improve:</strong>
+                    {{ job.missing_skills | join(', ') }}
+                </p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No job recommendations found.</p>
+        {% endif %}
+    </div>
+</section>
+
+</div>
+
+</body>
+</html>

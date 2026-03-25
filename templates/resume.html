@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        input {
+            background: rgba(255,255,255,0.9);
+        }
+
+        select {
+            background: rgba(255,255,255,0.9);
+        }
+
+        button {
+            background: #00c6ff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0072ff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>🤖 AI Resume Analyzer</h2>
+
+    <form action="/analyze_resume" method="POST" enctype="multipart/form-data">
+
+        <label>Upload Resume</label>
+        <input type="file" name="resume">
+
+        <label>Domain</label>
+        <select name="domain">
+            <option value="data science">Data Science</option>
+            <option value="web development">Web Development</option>
+            <option value="ai ml">AI/ML</option>
+        </select>
+
+        <button type="submit">Analyze Resume</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis Result</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="main-container">
+
+<h1>AI Employability Platform - Analysis Result 🚀</h1>
+
+<!-- ===== SKILLS ===== -->
+<section class="result-card">
+    <h2>Your Skills</h2>
+    {% if skills %}
+        <p>{{ skills | join(', ') }}</p>
+    {% else %}
+        <p>No skills detected.</p>
+    {% endif %}
+</section>
+
+<!-- ===== MISSING SKILLS ===== -->
+<section class="result-card">
+    <h2>Missing Skills</h2>
+    {% if missing_skills %}
+        <ul>
+            {% for skill in missing_skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>🎉 You have all the required skills!</p>
+    {% endif %}
+</section>
+
+<!-- ===== RECOMMENDED JOBS ===== -->
+<section class="result-card">
+    <h2>Recommended Jobs</h2>
+
+    <div class="job-grid">
+        {% for job in jobs %}
+        <div class="job-card">
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <a href="{{ job.link }}" target="_blank">Apply Now</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ===== ROADMAP ===== -->
+<section class="result-card">
+    <h2>Learning Roadmap</h2>
+    {% if roadmap %}
+        <ul>
+        {% for step in roadmap %}
+            <li>{{ step }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your roadmap is complete 🚀</p>
+    {% endif %}
+</section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Matcher</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+        }
+
+        textarea, input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            background: #ff4f81;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>💼 Resume vs Job Matcher</h2>
+
+    <form action="/job_match" method="POST" enctype="multipart/form-data">
+
+        <label>Upload Resume</label>
+        <input type="file" name="resume">
+
+        <label>Paste Job Description</label>
+        <textarea name="job_desc" placeholder="Paste job description here..."></textarea>
+
+        <button type="submit">Check Match</button>
+
+    </form>
+</div>
+
+</body>
+</html>

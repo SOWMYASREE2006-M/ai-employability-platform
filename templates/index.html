@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Employability Platform 🚀</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>AI Employability Platform 🚀</h1>
+
+<div class="container">
+
+    <!-- Manual Analysis -->
+    <div>
+        <div class="section-title">Manual Analysis</div>
+        <div class="card">
+            <form action="/predict" method="POST">
+                <label>Domain</label>
+                <select name="domain" required>
+                    <option value="data science">Data Science</option>
+                    <option value="web development">Web Development</option>
+                    <option value="ai ml">AI/ML</option>
+                </select>
+
+                <label>Skills (comma separated)</label>
+                <input type="text" name="skills" placeholder="python, sql, ml" required>
+
+                <button type="submit">Analyze</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AI Resume Analyzer -->
+    <div>
+        <div class="section-title">AI Resume Analyzer</div>
+        <div class="card">
+            <form action="/analyze_resume" method="POST" enctype="multipart/form-data">
+                <label>Upload Resume</label>
+                <input type="file" name="resume" required>
+
+                <label>Select Domain</label>
+                <select name="domain" required>
+                    <option value="data science">Data Science</option>
+                    <option value="web development">Web Development</option>
+                    <option value="ai ml">AI/ML</option>
+                </select>
+
+                <button type="submit">Analyze Resume</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<h2 style="text-align:center; margin-top: 40px;">Roadmap</h2>
+<ul>
+{% for step in roadmap %}
+    <li>{{ step }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
